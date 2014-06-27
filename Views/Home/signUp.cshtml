@@ -1,0 +1,225 @@
+﻿@model weconnect.Models.u
+@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : NotableFlower 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130623
+    
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WECONNECT</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="~/Content/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="WELCOME TO FREIND ZONE" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header-wrapper2">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="/Home/index" class="icon icon-leaf"><span>WE CONNECT</span></a></h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><a href="/Home/index" accesskey="1" title="">Homepage</a></li>
+					<li><a href="/Home/AboutUs" accesskey="3" title="">About Us</a></li>
+					<li><a href="/Home/ContactUs" accesskey="5" title="">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="wrapper">
+	<div id="page" class="container">
+		<div id="content">
+			<div class="title">
+				<h2>Welcome!</h2>
+				<span class="byline">Connect with friends</span> </div>
+			
+			<div id="two-column">
+				<div id="tbox1">
+					<div class="title">
+						 <div class="container">
+            <!-- Codrops top bar -->
+            
+         <header>
+              
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                               <h1>user name already exist</h1>
+                                <p class="change_link">
+									
+									<a href="#toregister" class="to_register">Join us</a>
+								</p>
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            @using (Html.BeginForm("signUp","Home",FormMethod.Post)){
+                            @*<form  action="/Home/signUp" method="post" autocomplete="on"> *@
+                                <h1> Sign up </h1> 
+                                <p> 
+                                     @Html.Label("","Name")
+                                   @* <label for="usernamesignup" class="uname" data-icon="u">Name</label>*@
+                                    @Html.TextBoxFor(m => m.fname, new {placeholder="Enter Full Name" , required="required"})
+                                     @Html.ValidationMessageFor(m =>m.fname)
+                                    @*<input id="userfullname" name="userfullname" required="required" type="text" placeholder="Enter Full Name" />*@
+                                </p>
+
+                                <p> 
+                                     @Html.Label("","User Name")
+                                    @*<label for="usernamesignup" class="uname" data-icon="u">Username</label>*@
+                                    @Html.TextBoxFor(m => m.uname, new {placeholder="Enter User Name" , required="required"})
+                                     @Html.ValidationMessageFor(m =>m.uname)
+                                    @*<input id="username_name" name="uname" required="required" type="text" placeholder="Enter User Name" />*@
+                                </p>
+
+                                 <p> 
+                                     @Html.Label("","Check avalibility")
+                                   @* <label for="usernamesignup" class="uname" >Check avalibility</label>*@
+                                    <button id="username_check" name="username_check" onclick="f1()"> Click Me </button>
+                                </p>
+
+
+                                <p> 
+                                    
+                                    @Html.Label("","Password")
+                                   @* <label for="passwordsignup" class="youpasswd" data-icon="p">Password </label>*@
+                                    @Html.TextBoxFor(m => m.pwd, new {placeholder="Enter your Password" , required="required" })
+                                     @Html.ValidationMessageFor(m =>m.pwd)
+                                    @*<input id="userpassword" name="pwd" required="required" type="password" placeholder="Enter your Password"/>*@
+                                </p>
+                          
+
+                                
+
+                                <p> 
+                                    @Html.Label("","Your Date of Birth")
+                                    @*<label for="dateofbirth" class="youdateofbirth" data-icon="u">Your Date of Birth </label>*@
+                                    <input id="userdob" name="dob" required="required" type="date" />
+                                </p>
+
+                               
+
+                                 <p> 
+                                     @Html.Label("", "City")
+                                    @*<label for="usernamesignup" class="uname" data-icon="u">City</label>*@
+                                     @Html.TextBoxFor(m => m.city, new {placeholder="Enter City" , required="required"})
+                                      @Html.ValidationMessageFor(m =>m.city)
+                                    @*<input id="usercity" name="city" required="required" type="text" placeholder="Enter City" />*@
+                                </p>
+
+                              
+    
+                                <p > 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            @*</form>*@
+                            }
+                        </div>
+                     
+                    </div>
+                </div>  
+            </section>
+<script>
+    function f1() {
+        $.getJSON("/Home/checkUserName?u=" + $('#uname').val(), function (x) {
+
+            if (x) {
+                alert("Availiable");
+            }
+            else {
+                alert("Not availiable");
+            }
+        });
+    }
+         </script>
+					</div>
+					
+					<ul class="style2">
+						
+					</ul>
+					
+				<div id="tbox2">
+					<div class="title">
+						
+					</div>
+					
+					<ul class="style2">
+						
+					</ul>
+					</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div class="box1">
+				<div class="title">
+					
+				</div>
+				<ul class="style2">
+				
+				</ul>
+			</div>
+			<div class="box2">
+				<div class="title">
+					
+				</div>
+				<ul class="style2">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="copyright" class="container">
+	<p>Copyright (c) 2014 All rights reserved. <br /> Designed and Created by <a href="http://www.facebook.com/adeem.anwer">ADEEM ALI</a> </p>
+</div>
+</body>
+</html>

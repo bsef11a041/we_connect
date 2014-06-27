@@ -1,0 +1,152 @@
+﻿@model weconnect.Models.connectadmin
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : NotableFlower 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130623
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>We connect</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="~/Content/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="WELCOME TO WE CONNECT" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="~/content/demo.css" />
+        <link rel="stylesheet" type="text/css" href="~/content/style.css" />
+		<link rel="stylesheet" type="text/css" href="~/content/animate-custom.css" />
+        <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+
+<div id="wrapper"> 
+	<div id="page" class="container">
+		<div id="content">
+			<div class="title">
+				<h2>Welcome!</h2>
+				<span class="byline">Connect with friends</span> </div>
+			
+			<div id="two-column">
+				<div id="tbox1">
+					<div class="title">
+						 <div class="container">
+            <!-- Codrops top bar -->
+            
+            <header>
+                
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            @using (Html.BeginForm("profile","Admin",FormMethod.Post))
+                            {
+                            @*<form  action="/Home/signIn" autocomplete="on" method="post"> *@
+                                <h1>Log in</h1> 
+                                <p> 
+                                    @Html.Label("","Your email or username")
+                                   @* <label for="username" class="uname" data-icon="u" > Your email or username </label>*@
+                                    @Html.TextBoxFor(m => m.uname, new {placeholder="myusername or mymail@mail.com" , required="required"})
+                                    @Html.ValidationMessageFor(m =>m.uname)
+                                    @*<input id="username" name="uname" required="required" type="text" placeholder="myusername or mymail@mail.com"/>*@
+                                </p>
+
+                                <p> 
+                                    @Html.Label("","Your password")
+                                    @*<label for="password" class="youpasswd" data-icon="p"> Your password </label>*@
+                                    @Html.TextBoxFor(m => m.pwd, new {placeholder="eg. X8df!90EO" , type="password" , required="required"})
+                                   @Html.ValidationMessageFor(m =>m.pwd)
+                                     @*<input id="password" name="pwd" required="required" type="password" placeholder="eg. X8df!90EO" /> *@
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                                     
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+                                <p  > 
+                                    <input type="submit" value="Login" /> 
+								</p>
+                               
+                            @*</form>*@
+                            }
+                        </div>
+
+                     
+                    </div>
+                </div>  
+            </section>
+        </div>
+        
+					</div>
+					
+					<ul class="style2">
+						
+					</ul>
+					
+				<div id="tbox2">
+					<div class="title">
+						
+					</div>
+					
+					<ul class="style2">
+						
+					</ul>
+					</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div class="box1">
+				<div class="title">
+					
+				</div>
+				<ul class="style2">
+				
+				</ul>
+			</div>
+			<div class="box2">
+				<div class="title">
+					
+				</div>
+				<ul class="style2">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
